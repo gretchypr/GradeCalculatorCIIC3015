@@ -115,11 +115,10 @@ dialog::backdrop { background: rgba(10, 25, 36, .66); backdrop-filter: blur(3px)
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
 /* Tabbed grade entry and spreadsheet-inspired course totals. */
 .gradebook { margin-top: 0; }
-.category-tabs { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-top: 24px; }
+.category-tabs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 24px; }
 .category-tab { --category-color: #876600; --category-soft: #fff7d5; border: 1px solid var(--line); border-top: 4px solid var(--category-color); border-radius: 10px; padding: 12px 8px; background: white; color: var(--ink); text-align: left; }
 .category-tab[data-category-tab="projects"] { --category-color: #414ac7; --category-soft: #eef0ff; }
 .category-tab[data-category-tab="labs"] { --category-color: #477b22; --category-soft: #eff7e8; }
-.category-tab[data-category-tab="quizzes"] { --category-color: #28647a; --category-soft: #eaf5f8; }
 .category-tab[data-category-tab="attendance"] { --category-color: #963f72; --category-soft: #fbeef5; }
 .category-tab[data-category-tab="final"] { --category-color: #6637a3; --category-soft: #f3edfc; }
 .category-tab[aria-selected="true"] { background: var(--category-soft); border-color: var(--category-color); box-shadow: 0 0 0 1px var(--category-color); }

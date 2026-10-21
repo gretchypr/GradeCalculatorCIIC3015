@@ -1,10 +1,9 @@
 const CATEGORIES = [
-  { id: "exams", title: "Partial exams", weight: 40, items: [["Exam 1",100],["Exam 2",100],["Exam 3",100]], bonus: true },
-  { id: "projects", title: "Programming projects", weight: 15, items: [["PA0",25],["PA1",100],["PA2",100],["PA3",100]], bonus: true },
-  { id: "labs", title: "Laboratories", weight: 15, items: Array.from({length:10},(_,i)=>[`Lab ${i+1}`,100]), bonus: true },
-  { id: "quizzes", title: "Quizzes", weight: 10, items: Array.from({length:10},(_,i)=>[`Quiz ${i+1}`,10]), bonus: false },
-  { id: "attendance", title: "Attendance", weight: 4, items: [["Attendance",100]], bonus: false },
-  { id: "final", title: "Final exam", weight: 16, items: [["Final exam",100]], bonus: false }
+  { id: "exams", title: "Partial exams", weight: 35, items: [["Exam 1",100],["Exam 2",100],["Exam 3",100]], bonus: true },
+  { id: "projects", title: "Programming projects", weight: 20, items: [["PA0",25],["PA1",100],["PA2",100],["PA3",100]], bonus: true },
+  { id: "labs", title: "Laboratories", weight: 20, items: Array.from({length:10},(_,i)=>[`Lab ${i+1}`,100]), bonus: true },
+  { id: "attendance", title: "Attendance", weight: 5, items: [["Attendance",100]], bonus: false },
+  { id: "final", title: "Final exam", weight: 20, items: [["Final exam",100]], bonus: false }
 ];
 const PASSING_GRADE = 70;
 const STORAGE_KEY = "course-grade-calculator-v1";
@@ -58,7 +57,7 @@ function renderCategories() {
     tab.setAttribute("aria-controls", node.id);
     tab.setAttribute("aria-selected", String(categoryIndex === 0));
     tab.tabIndex = categoryIndex === 0 ? 0 : -1;
-    const shortTitle = {exams:"Exams", projects:"Projects", labs:"Labs", quizzes:"Quizzes", attendance:"Attendance", final:"Final exam"}[category.id];
+    const shortTitle = {exams:"Exams", projects:"Projects", labs:"Labs", attendance:"Attendance", final:"Final exam"}[category.id];
     tab.innerHTML = `<span>${shortTitle}</span><small>${category.weight}% &middot; <span class="tab-count">0/${category.items.length}</span></small>`;
     tab.addEventListener("click", () => selectCategory(category.id));
     tab.addEventListener("keydown", event => {
@@ -205,7 +204,7 @@ function registerWebMCP() {
       name: "set_course_grades",
       title: "Set course grades",
       description: "Enter or replace multiple grade values in the visible course grade calculator.",
-      inputSchema: { type:"object", properties:{ grades:{ type:"object", additionalProperties:{ type:"number", minimum:0 }, description:"Grade map using keys such as exams-0, projects-1, labs-3, quizzes-2, final-0, or attendance-0." } }, required:["grades"], additionalProperties:false },
+      inputSchema: { type:"object", properties:{ grades:{ type:"object", additionalProperties:{ type:"number", minimum:0 }, description:"Grade map using keys such as exams-0, projects-1, labs-3, final-0, or attendance-0." } }, required:["grades"], additionalProperties:false },
       annotations:{ readOnlyHint:false, untrustedContentHint:false },
       execute(input) {
         if (!input || typeof input.grades !== "object" || Array.isArray(input.grades)) throw new Error("A grades object is required.");
