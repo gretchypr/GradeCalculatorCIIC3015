@@ -1,6 +1,6 @@
 const CATEGORIES = [
   { id: "exams", title: "Partial exams", weight: 35, items: [["Exam 1",100],["Exam 2",100],["Exam 3",100]], bonus: true },
-  { id: "projects", title: "Programming projects", weight: 20, items: [["PA0",25],["PA1",100],["PA2",100],["PA3",100]], bonus: true },
+  { id: "projects", title: "Programming projects", weight: 20, items: [["PA0",100],["PA1",100],["PA2",100],["PA3",100]], bonus: true },
   { id: "labs", title: "Laboratories", weight: 20, items: Array.from({length:10},(_,i)=>[`Lab ${i+1}`,100]), bonus: true },
   { id: "attendance", title: "Attendance", weight: 5, items: [["Attendance",100]], bonus: false },
   { id: "final", title: "Final exam", weight: 20, items: [["Final exam",100]], bonus: false }

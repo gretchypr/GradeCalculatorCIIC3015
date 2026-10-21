@@ -7,7 +7,7 @@ A student-friendly, static calculator for tracking course grades, remaining poin
 | Category | Weight | Items |
 | --- | ---: | --- |
 | Exams | 35% | 3 exams, 100 points each |
-| Projects | 20% | PA0: 25 points; PA1-PA3: 100 points each |
+| Projects | 20% | PA0-PA3: 100 points each |
 | Labs | 20% | 10 labs, 100 points each |
 | Attendance | 5% | 100 points |
 | Final exam | 20% | 100 points |
@@ -48,7 +48,7 @@ The final exam calculation uses entered non-final grades and assumes no addition
 
 - Include bonus points in the score for the item that earned them. Exam, lab, and project scores may exceed the item's listed maximum.
 - Bonus points stay within their category. Exams can contribute at most 35 course points; projects and labs can each contribute at most 20.
-- Project bonus points above an item's maximum are pooled to cover deficits below the 50% minimum on other entered projects. PA0 requires 12.5 points; PA1-PA3 require 50 points each.
+- Project bonus points above an item's maximum are pooled to cover deficits below the 50% minimum on other entered projects. PA0-PA3 require 50 points each.
 - Passing requires at least 70 course points, a lab average of at least 50%, and the project minimums after applying project bonuses.
 - The requirements check uses entered grades. Blank work is pending, so meeting the current requirements does not guarantee that all requirements will be met when the course ends.
 
